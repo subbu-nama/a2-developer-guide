@@ -1,0 +1,43 @@
+<table cellpadding="10" cellspacing="0" border="0" class="layout-alignment">
+	<tr>
+		<!-- ============ HEADER AREA ============== -->
+		<td colspan="2" class="layout-header-area-alignment">
+			<h1>HEADER AREA</h1>
+		</td>
+	</tr>
+	<tr>
+		<!-- ============ LEFT AREA ============== -->
+		<td class="layout-left-area-alignment">
+			<h1>LEFT SIDE AREA</h1>
+		</td>
+		<!-- ============ CENTER AREA ============== -->
+		<td class="layout-center-area-alignment">
+			<table width="100%" cellpadding="10" cellspacing="0" border="0">
+				<thead>
+					<tr>
+						<th>
+							ID
+						</th>
+						<th>
+							Name
+						</th>
+						<th>
+							Email
+						</th>
+						<th>
+							Description
+						</th>
+					</tr>
+				</thead>
+				<tbody *ngFor="let item of apiData; let index = index;">
+					<tr *ngIf="index <= 6">
+						<td>{{item.id}}</td>
+						<td>{{item.name}}</td>
+						<td>{{item.email}}</td>
+						<td>{{item.body}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+</table>

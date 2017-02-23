@@ -34,9 +34,9 @@ describe('AppComponent', () => {
   });
   
   // unit testing success case : Ensure left area is existed or not
-  it('left area', () => {
+  it('left side area', () => {
     fixture.detectChanges();
-    expect(el.innerText).toMatch("LEFT AREA");
+    expect(el.innerText).toMatch("LEFT SIDE AREA");
   });
 
   // unit testing failure case : Ensure left area is existed or not

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Http, Headers } from "@angular/http";
 import 'rxjs/add/operator/map';
+import { UserInfoService } from '../shared/services/userinfo.service';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +9,14 @@ import 'rxjs/add/operator/map';
 })
 export class AppComponent {
   apiData: any = [];
-  constructor(private http: Http) { }
+  constructor(private userInfoService: UserInfoService) { }
 
   ngOnInit() {
-    this.getDataFromSampleApi();
-  }
-
-  getDataFromSampleApi() {
-    this.http.get("http://jsonplaceholder.typicode.com/comments")
-      .map(res => res.json())
+    this.userInfoService.getUserInfo()
       .subscribe(
       data => this.apiData = data,
       error => console.log("request failed with :" + error)
       );
   }
+
 }
